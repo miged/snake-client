@@ -32,6 +32,11 @@ const handleUserInput = (key) => {
   if (key === KEYS.MOVE_DOWN) {
     connection.write("Move: down");
   }
+
+  // Messages
+  if (key === "q") {
+    connection.write("Say: Hi!");
+  }
 };
 
 module.exports = { setupInput, handleUserInput };
