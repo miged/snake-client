@@ -1,4 +1,8 @@
-const setupInput = function() {
+let connection;
+const { KEYS } = require('./constants');
+
+const setupInput = (conn) => {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -9,10 +13,24 @@ const setupInput = function() {
   return stdin;
 };
 
-const handleUserInput = function(key) {
+const handleUserInput = (key) => {
   if (key === '\u0003') {
     console.log('exiting..');
     process.exit();
+  }
+
+  // Movement
+  if (key === KEYS.MOVE_UP) {
+    connection.write("Move: up");
+  }
+  if (key === KEYS.MOVE_LEFT) {
+    connection.write("Move: left");
+  }
+  if (key === KEYS.MOVE_RIGHT) {
+    connection.write("Move: right");
+  }
+  if (key === KEYS.MOVE_DOWN) {
+    connection.write("Move: down");
   }
 };
 
