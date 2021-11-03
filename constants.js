@@ -1,5 +1,5 @@
-const IP = "localhost";
-const PORT = 3000;
+const IP = "165.227.47.243";
+const PORT = 50541;
 const NAME = "MIG";
 const KEYS = {
   "MOVE_UP": "w",
